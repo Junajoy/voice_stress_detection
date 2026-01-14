@@ -258,20 +258,6 @@ These can be used to:
 
 ---
 
-## Screenshots & Visuals
-
-
-
-
-
-
-
-
-
-
-
-
----
 
 ##  Future Improvements
 
@@ -283,7 +269,7 @@ These can be used to:
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This project demonstrates how retaining all CREMA-D and emotions intensities combined with **augmentation and class balancing**, significantly improves speech-based stress detection.
 
