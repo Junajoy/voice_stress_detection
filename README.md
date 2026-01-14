@@ -1,10 +1,10 @@
 
-# 🎙️ Voice Stress Detection using Deep Learning
+# Voice Stress Detection using Deep Learning
 
-## 📌 Project Overview
+## Project Overview
 
 This project focuses on **detecting stress levels from human speech** using deep learning techniques.
-A Convolutional Neural Network (CNN) is trained on emotional speech data and deployed through a **locally runnable Streamlit web application**.
+A Convolutional Neural Network (CNN) is trained on emotional speech data and deployed through a **Streamlit web application**.
 
 The application allows users to:
 
@@ -18,7 +18,7 @@ The system classifies speech into **Low**, **Medium**, or **High Stress** catego
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 * Build a speech-based stress classification system
 * Convert emotional speech labels into meaningful stress levels
@@ -29,14 +29,14 @@ The system classifies speech into **Low**, **Medium**, or **High Stress** catego
 
 ---
 
-## 📂 Dataset Information
+## Dataset Information
 
 * **Dataset**: CREMA-D (Crowd-Sourced Emotional Multimodal Actors Dataset)
 * **Modality Used**: Audio
 * **Audio Format**: WAV
 * **Speakers**: Multiple actors with varied accents and speaking styles
 
-### 🔖 CREMA-D Label Components
+### CREMA-D Label Components
 
 Each CREMA-D audio file contains:
 
@@ -51,7 +51,7 @@ Each CREMA-D audio file contains:
 
 ---
 
-## 🔄 Stress Label Mapping Strategy
+## Stress Label Mapping Strategy
 
 Emotions and intensities are mapped to **stress levels** as follows:
 
@@ -70,7 +70,7 @@ This ensures:
 
 ---
 
-## ⚙️ Preprocessing Pipeline
+## Preprocessing Pipeline
 
 * Audio resampling to a consistent sample rate
 * Silence trimming
@@ -83,7 +83,7 @@ This ensures:
 
 ---
 
-## 🧠 Model Architecture
+## Model Architecture
 
 All models use a **CNN-based architecture on MFCC spectrograms**.
 
@@ -104,11 +104,11 @@ All models use a **CNN-based architecture on MFCC spectrograms**.
 
 ---
 
-## 🧪 Model Variants & Comparison
+## Model Variants & Comparison
 
 Three models were trained and evaluated.
 
-### 🟦 Model 1 – Baseline
+### Model 1 – Baseline
 
 * No data augmentation
 * No class balancing
@@ -118,7 +118,7 @@ Three models were trained and evaluated.
 
 ---
 
-### 🟨 Model 2 – Augmentation Only
+### Model 2 – Augmentation Only
 
 * Audio augmentation:
 
@@ -130,9 +130,9 @@ Three models were trained and evaluated.
 
 ---
 
-### 🟩 Model 3 – Augmentation + Class Balancing (Final Model)
+### Model 3 – Augmentation + Class Balancing (Final Model)
 
-✅ **Final model used in the Streamlit app**
+**Final model used in the Streamlit app**
 
 * Audio augmentation
 * Explicit class balancing
@@ -140,13 +140,13 @@ Three models were trained and evaluated.
 * Stable training curves
 * Better generalization across stress classes
 
-### 🔑 Key Difference Across Models
+### Key Difference Across Models
 
 The **primary difference between Model 1, Model 2, and Model 3** is the **use of augmentation and class balancing techniques**, directly impacting generalization and stress-class stability.
 
 ---
 
-## 📉 Training Evaluation & Design Justification
+## Training Evaluation & Design Justification
 
 ### Architectural Choices
 
@@ -162,7 +162,7 @@ The **primary difference between Model 1, Model 2, and Model 3** is the **use of
 
 ---
 
-## 📊 Results & Performance Metrics
+## Results & Performance Metrics
 
 Evaluation metrics include:
 
@@ -180,10 +180,12 @@ Confusion matrices and learning curves are included to:
 
 ---
 
-## 🖥️ Streamlit Application Features
+## Streamlit Application Features
 
 * Upload WAV / MP3 audio files
 * Live microphone recording
+
+ ![the app](https://github.com/user-attachments/assets/90bc7a2c-8e9c-4b65-a547-b11a4e6d3361)
 * Stress level prediction with confidence score
 * Stress-over-time curve (continuous values, not discrete labels)
 * Feature indicators:
@@ -191,45 +193,53 @@ Confusion matrices and learning curves are included to:
   * Pitch variability
   * Spectral centroid
   * MFCC variance
-* Stress comparison across multiple files
 * Export predictions as CSV or JSON
+
+![image1](https://github.com/user-attachments/assets/5eec9207-6a77-43d1-a2ca-f0cf515ca6ce)
+
+![image2](https://github.com/user-attachments/assets/e7480c00-bcae-4b2c-ba0a-0d450004732a)
+
+![image3](https://github.com/user-attachments/assets/23dee2e7-4054-4d9b-9717-fc88f1c86ca8)
+* Stress comparison across multiple files
+
+
+![comparison](https://github.com/user-attachments/assets/f819d4d0-33e7-4897-8f56-03c2a4d48def)
 
 ---
 
-## ▶️ Running the Application Locally
+## Running the Application Locally
 
-### 1️⃣ Clone the Repository
+###  Clone the Repository
 
 ```
 git clone https://github.com/Junajoy/voice-stress-detection.git
 cd voice-stress-detection
 ```
 
-### 2️⃣ Create a Virtual Environment (Recommended)
+###  Create a Virtual Environment (Recommended)
 
 ```
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 ```
 
-### 3️⃣ Install Dependencies
+###  Install Dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Run the Application
+###  Run the Application
 
 ```
 streamlit run app.py
 ```
 
-📌 The app is designed to run **locally**.
-There are **no Colab, ngrok, or cloud-specific dependencies**.
+
 
 ---
 
-## 🎧 Sample Audio Files
+##  Sample Audio Files
 
 Three sample files are provided for quick testing:
 
@@ -248,30 +258,8 @@ These can be used to:
 
 ---
 
-## 📸 Screenshots & Visuals
 
-### Recommended Placement in README
-
-* App UI overview → After “Streamlit Application Features”
-* Stress comparison graph → Results & Performance Metrics
-* Confusion matrix → Results & Performance Metrics
-* Accuracy / Loss curves → Training Evaluation
-
-Suggested folder:
-
-```
-/assets/screenshots/
-```
-
-Example usage:
-
-```
-![App UI](assets/screenshots/app_ui.png)
-```
-
----
-
-## 🚀 Future Improvements
+##  Future Improvements
 
 * Transformer-based speech encoders
 * Multimodal stress detection (audio + text)
@@ -281,7 +269,7 @@ Example usage:
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This project demonstrates how retaining all CREMA-D and emotions intensities combined with **augmentation and class balancing**, significantly improves speech-based stress detection.
 
