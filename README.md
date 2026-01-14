@@ -162,23 +162,25 @@ The **primary difference between Model 1, Model 2, and Model 3** is the **use of
 
 ---
 
-## Results & Performance Metrics
+### Results & Performance Metrics
+The final CNN model (Model 3 – speaker-independent split with class-weighted training) was evaluated on the validation set. Key performance metrics are summarized below:
+**Overall Performance**
+Metric	Value
+Accuracy	0.740
+Precision	0.835
+Recall	0.740
+F1-score	0.759
 
-Evaluation metrics include:
+**Class-wise Accuracy**
+Low Stress:	0.842
+Medium Stress:	0.696
+High Stress:	0.917
 
-* Accuracy
-* Precision, Recall, F1-score (per class)
-* Confusion matrices
-* Training vs validation accuracy curves
-* Training vs validation loss curves
-
-Confusion matrices and learning curves are included to:
-
-* Justify architectural and regularization choices
-* Support final model selection
-* Demonstrate improved generalization in Model 3
-
----
+**Observations**
+*Model 3 achieves the best generalization compared to earlier models due to the speaker-independent data split and class-weighted loss.
+*Medium stress is predicted with high precision, while low-stress examples have higher recall.
+*Confusion matrices and learning curves demonstrate stable training with limited overfitting.
+*The macro-average F1-score of 0.70 indicates balanced performance across classes, supporting the model's suitability for deployment.
 
 ## Streamlit Application Features
 
@@ -259,13 +261,17 @@ These can be used to:
 ---
 
 
-##  Future Improvements
+## Future Improvements
 
-* Transformer-based speech encoders
-* Multimodal stress detection (audio + text)
-* Speaker normalization
-* Continuous real-time monitoring
-* Clinical-grade datasets and validation
+Paralinguistic Stress Cues: Incorporate voice tremor, pitch instability, and amplitude variations (e.g., jitter, shimmer, HNR) to capture involuntary stress signals.
+
+Filled Pause & Disfluency Analysis: Detect hesitation markers such as “um”, “uh”, and prolonged pauses as indicators of cognitive stress.
+
+Late Fusion Strategy: Combine CNN predictions with auxiliary paralinguistic scores to refine stress confidence without affecting model training.
+
+Advanced Speech Models: Explore transformer-based encoders for richer temporal modeling.
+
+Multimodal & Clinical Validation: Extend to multimodal inputs and validate using clinically annotated datasets.
 
 ---
 
